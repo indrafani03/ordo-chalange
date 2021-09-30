@@ -27,13 +27,13 @@ class _MyHomePageState extends StatelessWidget {
         ),
         Container(
           width: MediaQuery.of(context).size.width / 1,
-          height: MediaQuery.of(context).size.height / 7,
+          height: MediaQuery.of(context).size.height / 7.8,
           color: Colors.white,
           child: Center(
             child: Column(
               children: [
                 SizedBox(
-                  height: 50,
+                  height: 45,
                 ),
                 Row(
                   children: [

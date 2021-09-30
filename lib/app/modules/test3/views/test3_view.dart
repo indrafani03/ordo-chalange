@@ -67,6 +67,25 @@ class Test3View extends GetView<Test3Controller> {
           ),
         ],
       ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.home, color: Colors.black54),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.list_alt_outlined, color: Colors.black54),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: Icon(Icons.timelapse, color: Colors.black54),
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {

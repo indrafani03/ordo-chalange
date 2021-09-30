@@ -213,7 +213,7 @@ class _ProfileScreenState extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Expanded(
+            child: SizedBox(
               child: Text(
                 "Diana Florist",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -225,7 +225,7 @@ class _ProfileScreenState extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 20),
-            child: Expanded(
+            child: SizedBox(
               child: Text(
                 "Toko bunga terbaik se indonesia raya \nharga murah produk berkualitas",
                 style: TextStyle(fontSize: 16),
