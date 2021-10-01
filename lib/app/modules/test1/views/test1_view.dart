@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:solid_bottom_sheet/solid_bottom_sheet.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
@@ -19,12 +20,25 @@ class _MyHomePageState extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(children: [
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("assets/map.jpg"), fit: BoxFit.cover),
+        Stack(children: [
+          Container(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("assets/map.png"), fit: BoxFit.cover),
+            ),
           ),
-        ),
+          Center(
+            child: Container(
+              width: 400,
+              height: 400,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("assets/tracking.png"),
+                    fit: BoxFit.contain),
+              ),
+            ),
+          ),
+        ]),
         Container(
           width: MediaQuery.of(context).size.width / 1,
           height: MediaQuery.of(context).size.height / 7.8,
@@ -41,7 +55,7 @@ class _MyHomePageState extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8.0),
                       child: GestureDetector(
                         child: CircleAvatar(
-                          backgroundColor: Colors.green,
+                          backgroundColor: Color(0xff47623F),
                           radius: 17,
                           child:
                               Icon(Icons.arrow_back_sharp, color: Colors.white),
@@ -53,10 +67,10 @@ class _MyHomePageState extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         "LACAK PESANAN",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.green),
+                        style: GoogleFonts.poppins(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700,
+                            color: Color(0xff262626)),
                       ),
                     ),
                     SizedBox(
@@ -65,7 +79,7 @@ class _MyHomePageState extends StatelessWidget {
                     GestureDetector(
                       child: Icon(
                         Icons.shopping_bag,
-                        color: Colors.green,
+                        color: Color(0xff3AB648),
                         size: 30,
                       ),
                       onTap: () {},
@@ -98,45 +112,38 @@ class _MyHomePageState extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Stack(children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 20),
-                        child: Container(
-                          width: 70.0,
-                          height: 70.0,
-                          decoration: BoxDecoration(
-                            color: const Color(0xff7c94b6),
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  'https://mobirise.com/bootstrap-template/profile-template/assets/images/timothy-paul-smith-256424-1200x800.jpg'),
-                              fit: BoxFit.cover,
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(50.0)),
-                            border: Border.all(
-                              color: Colors.green,
-                              width: 4.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                      // Container(
-                      //     width: MediaQuery.of(context).size.width / 4,
-                      //     height: MediaQuery.of(context).size.height / 8,
-                      //     color: Colors.red)
-                    ]),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Stack(children: [
+                        Image.asset("assets/Vector.png"),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                              width: 60,
+                              height: 60,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      'https://mobirise.com/bootstrap-template/profile-template/assets/images/timothy-paul-smith-256424-1200x800.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                                shape: BoxShape.circle,
+                              )),
+                        )
+                      ]),
+                    ),
                     SizedBox(
-                      width: 5,
+                      width: 3,
                     ),
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "David Morel",
-                            style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
-                          ),
+                          Text("David Morel",
+                              style: GoogleFonts.openSans(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700,
+                                  color: Color(0xff061737))),
                           Text("B 1201 FA",
                               style: TextStyle(color: Colors.green)),
                         ],
@@ -163,9 +170,9 @@ class _MyHomePageState extends StatelessWidget {
                           ],
                         ),
                         child: Icon(
-                          Icons.messenger_outline_outlined,
+                          Icons.mark_chat_unread,
                           color: Colors.white,
-                          size: 50,
+                          size: 40,
                         ),
                       ),
                     ),
@@ -177,7 +184,7 @@ class _MyHomePageState extends StatelessWidget {
           children: [
             Container(
               color: Colors.white,
-              height: MediaQuery.of(context).size.height / 1,
+              height: MediaQuery.of(context).size.height / 1 * 1.2,
               width: MediaQuery.of(context).size.width / 1,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -189,6 +196,7 @@ class _MyHomePageState extends StatelessWidget {
                         width: 200,
                         height: 50,
                         child: TimelineTile(
+                          afterLineStyle: LineStyle(color: Colors.white),
                           endChild: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -206,8 +214,46 @@ class _MyHomePageState extends StatelessWidget {
                           indicatorStyle: IndicatorStyle(
                             color: Colors.white,
                             width: 30,
-                            iconStyle: IconStyle(
-                                iconData: Icons.timelapse, color: Colors.green),
+                            // iconStyle: IconStyle(
+                            //     iconData: Icons.timelapse, color: Colors.green),
+                            indicator: Image.asset(
+                              "assets/clock.png",
+                              fit: BoxFit.contain,
+                              width: 30,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 9.0),
+                        child: SizedBox(
+                          child: CircleAvatar(
+                            backgroundColor: Color(0xff47623F).withOpacity(0.5),
+                            radius: 4,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: SizedBox(
+                          child: CircleAvatar(
+                            backgroundColor: Color(0xff47623F).withOpacity(0.8),
+                            radius: 5,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 7.0),
+                        child: SizedBox(
+                          child: CircleAvatar(
+                            backgroundColor: Color(0xff47623F),
+                            radius: 6,
                           ),
                         ),
                       ),
@@ -215,6 +261,7 @@ class _MyHomePageState extends StatelessWidget {
                         width: 200,
                         height: 50,
                         child: TimelineTile(
+                          afterLineStyle: LineStyle(color: Colors.white),
                           endChild: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -222,17 +269,23 @@ class _MyHomePageState extends StatelessWidget {
                                 "Alamat Anda",
                                 style: TextStyle(color: Colors.green),
                               ),
-                              Text("Taman indah Dago No.162",
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
+                              Text(
+                                "Taman indah Dago No.162",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ],
                           ),
-                          isLast: true,
+                          isFirst: true,
                           indicatorStyle: IndicatorStyle(
                             color: Colors.white,
                             width: 30,
-                            iconStyle: IconStyle(
-                                iconData: Icons.map, color: Colors.green),
+                            // iconStyle: IconStyle(
+                            //     iconData: Icons.timelapse, color: Colors.green),
+                            indicator: Image.asset(
+                              "assets/pin.png",
+                              fit: BoxFit.contain,
+                              width: 30,
+                            ),
                           ),
                         ),
                       ),
@@ -299,7 +352,9 @@ class _MyHomePageState extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 20),
                               child: SizedBox(
-                                child: Text("2 ITEM"),
+                                child: Text("2 ITEM",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
                               ),
                             )
                           ],
@@ -312,18 +367,23 @@ class _MyHomePageState extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "Catatan Item",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff262626)),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          height: MediaQuery.of(context).size.height / 15,
-                          width: MediaQuery.of(context).size.width / 1.2,
+                          height: MediaQuery.of(context).size.height / 12,
+                          width: MediaQuery.of(context).size.width / 1,
                           child: Text(
                             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum ",
-                            style: TextStyle(),
+                            style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff262626)),
                             maxLines: 5,
                             softWrap: true,
                           ),
@@ -381,7 +441,9 @@ class _MyHomePageState extends StatelessWidget {
                             Padding(
                               padding: const EdgeInsets.only(right: 20),
                               child: SizedBox(
-                                child: Text("2 ITEM"),
+                                child: Text("2 ITEM",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
                               ),
                             )
                           ],
@@ -394,18 +456,23 @@ class _MyHomePageState extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "Catatan Item",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff262626)),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
-                          height: MediaQuery.of(context).size.height / 15,
-                          width: MediaQuery.of(context).size.width / 1.2,
+                          height: MediaQuery.of(context).size.height / 12,
+                          width: MediaQuery.of(context).size.width / 1,
                           child: Text(
                             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum ",
-                            style: TextStyle(),
+                            style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff262626)),
                             maxLines: 5,
                             softWrap: true,
                           ),
@@ -418,18 +485,23 @@ class _MyHomePageState extends StatelessWidget {
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
                           "Catatan Pesanan",
-                          style: TextStyle(
-                              fontSize: 15, fontWeight: FontWeight.bold),
+                          style: GoogleFonts.poppins(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff262626)),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Container(
                           height: MediaQuery.of(context).size.height / 10,
-                          width: MediaQuery.of(context).size.width / 1.2,
+                          width: MediaQuery.of(context).size.width / 1,
                           child: Text(
                             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum ",
-                            style: TextStyle(),
+                            style: GoogleFonts.poppins(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0xff262626)),
                             maxLines: 5,
                             softWrap: true,
                           ),
@@ -448,24 +520,23 @@ class _MyHomePageState extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.list_alt_outlined, color: Colors.black54),
+              icon: Icon(Icons.assignment, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon:
-                  Icon(Icons.transfer_within_a_station, color: Colors.black54),
+              icon: Icon(Icons.swap_horiz, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.home, color: Colors.black54),
+              icon: Icon(Icons.home, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.notifications, color: Colors.black54),
+              icon: Icon(Icons.notifications_none, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.person, color: Colors.black54),
+              icon: Icon(Icons.person_outline, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
           ],

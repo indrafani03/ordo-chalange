@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/test3_controller.dart';
 
@@ -13,11 +14,13 @@ class Test3View extends GetView<Test3Controller> {
         backgroundColor: Colors.white,
         title: Text(
           "FINANSIAL",
-          style: TextStyle(
-              fontSize: 17, fontWeight: FontWeight.bold, color: Colors.black),
+          style: GoogleFonts.poppins(
+              fontSize: 17,
+              fontWeight: FontWeight.w700,
+              color: Color(0xff545454)),
         ),
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(12.0),
           child: GestureDetector(
             child: CircleAvatar(
               backgroundColor: Colors.orange,
@@ -25,7 +28,7 @@ class Test3View extends GetView<Test3Controller> {
               child: Icon(
                 Icons.arrow_back_sharp,
                 color: Colors.white,
-                size: 15,
+                size: 16,
               ),
             ),
             onTap: () => Get.back(),
@@ -36,14 +39,13 @@ class Test3View extends GetView<Test3Controller> {
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {},
-                child: Icon(Icons.monitor_outlined,
-                    size: 26.0, color: Colors.blue),
+                child: Icon(Icons.assessment, size: 26.0, color: Colors.blue),
               )),
           Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: GestureDetector(
                 onTap: () {},
-                child: Icon(Icons.notifications_active, color: Colors.blue),
+                child: Image.asset("assets/group1.png"),
               )),
         ],
       ),
@@ -72,15 +74,15 @@ class Test3View extends GetView<Test3Controller> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.home, color: Colors.black54),
+              icon: Icon(Icons.home, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.list_alt_outlined, color: Colors.black54),
+              icon: Icon(Icons.list_alt_outlined, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.timelapse, color: Colors.black54),
+              icon: Icon(Icons.timelapse, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
           ],
@@ -96,7 +98,13 @@ class Test3View extends GetView<Test3Controller> {
             SizedBox(
               width: MediaQuery.of(context).size.width / 4,
             ),
-            Text('Complain'),
+            Text(
+              'Complain',
+              style: GoogleFonts.poppins(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white),
+            ),
             SizedBox(
               width: MediaQuery.of(context).size.width / 4,
             ),
@@ -144,17 +152,17 @@ class Body extends StatelessWidget {
                   children: [
                     Text(
                       "TOTAL BONUS",
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                           fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orangeAccent),
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffFF9A00)),
                     ),
                     Text(
                       "Rp 5.000.000.00",
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                           fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff6D6D6D)),
                     ),
                   ],
                 ),
@@ -186,17 +194,17 @@ class Body extends StatelessWidget {
                   children: [
                     Text(
                       "PENDING BONUS",
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                           fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orangeAccent),
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xffFF9A00)),
                     ),
                     Text(
                       "Rp 50.000.00",
-                      style: TextStyle(
+                      style: GoogleFonts.poppins(
                           fontSize: 25,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.grey),
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xff6D6D6D)),
                     ),
                   ],
                 ),
@@ -223,361 +231,18 @@ class Body extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Daftar Rebate",
-                          style: TextStyle(fontSize: 15, color: Colors.green),
-                        ),
-                      ),
-                      Row(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Text("Semua"),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.orangeAccent,
-                                minimumSize: Size(30, 30)),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          ElevatedButton(
-                            onPressed: () {},
-                            child: Row(
-                              children: [
-                                Text("Filter"),
-                                Icon(Icons.short_text_outlined)
-                              ],
-                            ),
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.orangeAccent,
-                                minimumSize: Size(30, 30)),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                  TRX(),
                   new Divider(
                     thickness: 2,
                   ),
                   SizedBox(
                     width: 10,
                   ),
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("ID transaksi"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("#EC1201211",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Rebate"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("Rp. 150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Tanggal"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("17 Juli 2021",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("ID transaksi"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("#EC1201211",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Rebate"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("Rp. 150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Tanggal"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("17 Juli 2021",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("ID transaksi"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("#EC1201211",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Rebate"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("Rp. 150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Tanggal"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("17 Juli 2021",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("ID transaksi"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("#EC1201211",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Rebate"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("Rp. 150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Tanggal"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("17 Juli 2021",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    )
-                  ]),
-                  Row(children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("ID transaksi"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("#EC1201211",
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Rebate"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("Rp. 150.000",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          Text("Tanggal"),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text("17 Juli 2021",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.green)),
-                        ],
-                      ),
-                    )
-                  ]),
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Text("ID transaksi"),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("#EC1201211",
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Text("Rebate"),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("Rp. 150.000",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green)),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            Text("Tanggal"),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Text("17 Juli 2021",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.green)),
-                          ],
-                        ),
-                      )
-                    ],
-                  )
+                  TRXLIST(),
+                  TRXLIST(),
+                  TRXLIST(),
+                  TRXLIST(),
+                  TRXLIST(),
                 ],
               ),
             ),
@@ -609,10 +274,10 @@ class Body extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
                           "Riwayat Rebate",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.orange),
+                          style: GoogleFonts.poppins(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: Color(0xffFF9A00)),
                         ),
                       ),
                     ],
@@ -625,202 +290,10 @@ class Body extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Row(
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.blueAccent,
-                                    radius: 15,
-                                    child: Icon(
-                                      Icons.note,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text("#EC1201211"),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text("20 Jul 2021",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width / 6,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text("Rp 150.000"),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.orangeAccent,
-                                  minimumSize: Size(30, 30)),
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.blueAccent,
-                                    radius: 15,
-                                    child: Icon(
-                                      Icons.note,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text("#EC1201211"),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text("20 Jul 2021",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width / 6,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text("Rp 150.000"),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.orangeAccent,
-                                  minimumSize: Size(30, 30)),
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.blueAccent,
-                                    radius: 15,
-                                    child: Icon(
-                                      Icons.note,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text("#EC1201211"),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text("20 Jul 2021",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width / 6,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text("Rp 150.000"),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.orangeAccent,
-                                  minimumSize: Size(30, 30)),
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  CircleAvatar(
-                                    backgroundColor: Colors.blueAccent,
-                                    radius: 15,
-                                    child: Icon(
-                                      Icons.note,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text("#EC1201211"),
-                                        SizedBox(
-                                          height: 5,
-                                        ),
-                                        Text("20 Jul 2021",
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.green)),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              )),
-                          SizedBox(
-                            width: MediaQuery.of(context).size.width / 6,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text("Rp 150.000"),
-                              style: ElevatedButton.styleFrom(
-                                  primary: Colors.orangeAccent,
-                                  minimumSize: Size(30, 30)),
-                            ),
-                          )
-                        ],
-                      ),
+                      Riwayat(),
+                      Riwayat(),
+                      Riwayat(),
+                      Riwayat(),
                     ],
                   ),
                 ],
@@ -828,6 +301,215 @@ class Body extends StatelessWidget {
             ),
           ],
         ),
+      ],
+    );
+  }
+}
+
+class Riwayat extends StatelessWidget {
+  const Riwayat({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Row(
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.blueAccent,
+              radius: 15,
+              child: Icon(
+                Icons.receipt,
+                color: Colors.white,
+                size: 20,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text("#EC1201211",
+                      style: GoogleFonts.poppins(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w500,
+                          color: Color(0xff3D6670))),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text("20 Jul 2021",
+                      style: GoogleFonts.poppins(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff6C757D))),
+                ],
+              ),
+            ),
+          ],
+        ),
+        SizedBox(
+          width: MediaQuery.of(context).size.width / 6,
+        ),
+        ElevatedButton(
+          onPressed: () {},
+          child: Text("Rp 150.000",
+              style: GoogleFonts.poppins(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xffFFFFFF))),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.orangeAccent,
+            minimumSize: Size(30, 30),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(50))),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class TRXLIST extends StatelessWidget {
+  const TRXLIST({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text(
+              "ID transaksi",
+              style: GoogleFonts.poppins(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff94AFB6)),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text("#EC1201211",
+                style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff3D6670))),
+          ],
+        ),
+      ),
+      SizedBox(
+        width: 20,
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text("Rebate",
+                style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff94AFB6))),
+            SizedBox(
+              height: 5,
+            ),
+            Text("Rp. 150.000",
+                style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xff41BE06))),
+          ],
+        ),
+      ),
+      SizedBox(
+        width: 20,
+      ),
+      Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text(
+              "Tanggal",
+              style: GoogleFonts.poppins(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xff94AFB6)),
+            ),
+            SizedBox(
+              height: 5,
+            ),
+            Text("17 Juli 2021",
+                style: GoogleFonts.poppins(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: Color(0xff41BE06))),
+          ],
+        ),
+      )
+    ]);
+  }
+}
+
+class TRX extends StatelessWidget {
+  const TRX({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            "Daftar Rebate",
+            style: GoogleFonts.poppins(
+                fontSize: 15,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff94AFB6)),
+          ),
+        ),
+        Row(
+          children: [
+            ElevatedButton(
+              onPressed: () {},
+              child: Text("Semua"),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.orangeAccent,
+                minimumSize: Size(30, 30),
+                textStyle: GoogleFonts.poppins(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff94AFB6)),
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Row(
+                children: [Text("Filter"), Icon(Icons.short_text_outlined)],
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                minimumSize: Size(30, 30),
+                textStyle: GoogleFonts.poppins(
+                    fontSize: 11,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff94AFB6)),
+              ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+          ],
+        )
       ],
     );
   }

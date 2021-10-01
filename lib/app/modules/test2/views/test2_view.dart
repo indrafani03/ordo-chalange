@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/test2_controller.dart';
 
@@ -14,24 +15,23 @@ class Test2View extends GetView<Test2Controller> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             IconButton(
-              icon: Icon(Icons.book, color: Colors.black54),
+              icon: Icon(Icons.chrome_reader_mode, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon:
-                  Icon(Icons.transfer_within_a_station, color: Colors.black54),
+              icon: Icon(Icons.swap_horiz, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.download, color: Colors.black54),
+              icon: Icon(Icons.move_to_inbox, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.notifications, color: Colors.black54),
+              icon: Icon(Icons.assessment, color: Color(0xffC6C4C4)),
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.person, color: Colors.black54),
+              icon: Image.asset("assets/vektor.png"),
               onPressed: () {},
             ),
           ],
@@ -60,8 +60,12 @@ class _ProfileScreenState extends StatelessWidget {
                 child: GestureDetector(
                   child: CircleAvatar(
                     backgroundColor: Colors.black,
-                    radius: 17,
-                    child: Icon(Icons.arrow_back_sharp, color: Colors.white),
+                    radius: 13,
+                    child: Icon(
+                      Icons.arrow_back_sharp,
+                      color: Colors.white,
+                      size: 12,
+                    ),
                   ),
                   onTap: () => Get.back(),
                 ),
@@ -72,23 +76,26 @@ class _ProfileScreenState extends StatelessWidget {
                   "PORTFOLIO VENDOR",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 16,
                       color: Colors.black),
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width / 4,
+                width: MediaQuery.of(context).size.width / 3.2,
               ),
               GestureDetector(
                 child: Icon(
-                  Icons.shopping_bag,
+                  Icons.notifications,
                   color: Colors.black,
-                  size: 30,
+                  size: 25,
                 ),
                 onTap: () {},
               ),
-              SizedBox(
-                width: MediaQuery.of(context).size.width / 9,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 1),
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width / 10,
+                ),
               ),
             ],
           ),
@@ -143,18 +150,16 @@ class _ProfileScreenState extends StatelessWidget {
                         children: [
                           Text(
                             '5.0',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff262626)),
                           ),
-                          Text(
-                            'Rating',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey,
-                            ),
-                          )
+                          Text('Rating',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff262626)))
                         ],
                       ),
                       SizedBox(
@@ -164,18 +169,16 @@ class _ProfileScreenState extends StatelessWidget {
                         children: [
                           Text(
                             '100',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff262626)),
                           ),
-                          Text(
-                            'Review',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey,
-                            ),
-                          )
+                          Text('Review',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff262626)))
                         ],
                       ),
                       SizedBox(
@@ -185,18 +188,16 @@ class _ProfileScreenState extends StatelessWidget {
                         children: [
                           Text(
                             '162',
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
+                            style: GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Color(0xff262626)),
                           ),
-                          Text(
-                            'Pesanan',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.grey,
-                            ),
-                          )
+                          Text('Pesanan',
+                              style: GoogleFonts.poppins(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w400,
+                                  color: Color(0xff262626)))
                         ],
                       )
                     ],
@@ -216,7 +217,10 @@ class _ProfileScreenState extends StatelessWidget {
             child: SizedBox(
               child: Text(
                 "Diana Florist",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                style: GoogleFonts.poppins(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
           ),
@@ -228,7 +232,10 @@ class _ProfileScreenState extends StatelessWidget {
             child: SizedBox(
               child: Text(
                 "Toko bunga terbaik se indonesia raya \nharga murah produk berkualitas",
-                style: TextStyle(fontSize: 16),
+                style: GoogleFonts.poppins(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ),
@@ -251,8 +258,12 @@ class _ProfileScreenState extends StatelessWidget {
               child: Center(
                 child: Column(
                   children: [
-                    SizedBox(height: 8),
-                    Text("PORTFOLIO"),
+                    SizedBox(height: 7),
+                    Text("PORTFOLIO",
+                        style: GoogleFonts.poppins(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black)),
                   ],
                 ),
               ),
@@ -261,8 +272,7 @@ class _ProfileScreenState extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
+          Center(
             child: Wrap(
               direction: Axis.horizontal,
               children: [
@@ -278,7 +288,7 @@ class _ProfileScreenState extends StatelessWidget {
                 Product(),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
@@ -322,7 +332,10 @@ class Product extends StatelessWidget {
                 Icon(Icons.star, size: 20, color: Colors.yellow),
                 Text(
                   "5.0",
-                  style: TextStyle(color: Colors.white),
+                  style: GoogleFonts.poppins(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white),
                 ),
               ],
             ),
@@ -343,8 +356,13 @@ class Product extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(3.0),
-                child: Text("Ini adalah bunga",
-                    style: TextStyle(color: Colors.white)),
+                child: Text(
+                  "Ini adalah bunga",
+                  style: GoogleFonts.poppins(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white),
+                ),
               ),
             ),
           ],
